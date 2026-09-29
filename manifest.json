@@ -1,0 +1,19 @@
+{
+    "name": "glowé Inventaris",
+    "short_name": "glowé",
+    "description": "aplikasi inventaris produk kosmetik glowé",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#fffaf8",
+    "theme_color": "#b86f7c",
+    "orientation": "portrait-primary",
+
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

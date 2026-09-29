@@ -1,0 +1,2477 @@
+/* =====================================================
+   GLOWÉ INVENTARIS
+   CSS UTAMA
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+
+    background: #fffaf8;
+
+    color: #3d3032;
+
+    min-height: 100vh;
+}
+
+
+/* tombol dan input mengikuti font */
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   WARNA UTAMA
+===================================================== */
+
+:root {
+
+    --pink: #b86f7c;
+
+    --pink-light: #f8e8eb;
+
+    --pink-soft: #fff2f4;
+
+    --pink-dark: #925763;
+
+    --text: #3d3032;
+
+    --text-soft: #7d6c70;
+
+    --border: #eedfe2;
+
+    --white: #ffffff;
+
+    --danger: #c85c63;
+
+}
+
+
+/* =====================================================
+   SPLASH SCREEN
+===================================================== */
+
+.splash-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: #fffaf8;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: opacity .5s ease,
+                visibility .5s ease;
+
+}
+
+
+.splash-screen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+.splash-content {
+
+    text-align: center;
+
+}
+
+
+.splash-icon {
+
+    width: 100px;
+
+    height: 100px;
+
+    margin: 0 auto 20px;
+
+}
+
+
+.splash-icon img {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.splash-content h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    color: var(--pink);
+
+}
+
+
+.splash-inventaris {
+
+    margin-top: -3px;
+
+    color: var(--pink-dark);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.splash-text {
+
+    margin-top: 12px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+}
+
+
+.loading-box {
+
+    width: 180px;
+
+    height: 5px;
+
+    background: var(--pink-light);
+
+    border-radius: 20px;
+
+    margin: 22px auto 10px;
+
+    overflow: hidden;
+
+}
+
+
+.loading-bar {
+
+    width: 0;
+
+    height: 100%;
+
+    background: var(--pink);
+
+    border-radius: 20px;
+
+    animation: loading 1.7s ease forwards;
+
+}
+
+
+@keyframes loading {
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+.splash-content small {
+
+    color: #a69398;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 307px;
+
+    background: var(--white);
+
+    border-right: 1px solid var(--border);
+
+    padding: 32px 22px;
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 5px 10px 35px;
+
+}
+
+
+.brand img {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 17px;
+
+}
+
+
+.brand-text h2 {
+
+    font-family: "Playfair Display", serif;
+
+    color: var(--pink);
+
+    font-size: 26px;
+
+    line-height: 1;
+
+}
+
+
+.brand-text span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--pink-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =====================================================
+   NAVIGASI
+===================================================== */
+
+.sidebar-nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.nav-item {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #76666a;
+
+    padding: 15px 18px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.nav-item i {
+
+    width: 20px;
+
+    text-align: center;
+
+}
+
+
+.nav-item:hover {
+
+    background: var(--pink-soft);
+
+    color: var(--pink);
+
+}
+
+
+.nav-item.active {
+
+    background: #f8e7ea;
+
+    color: var(--pink);
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   FOOTER SIDEBAR
+===================================================== */
+
+.sidebar-footer {
+
+    margin-top: auto;
+
+    padding: 18px 26px;
+
+    background: #fff2f4;
+
+    border-radius: 17px;
+
+}
+
+
+.sidebar-footer strong {
+
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+
+    color: var(--text);
+
+}
+
+
+.sidebar-footer span {
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main-content {
+
+    margin-left: 307px;
+
+    min-height: 100vh;
+
+    padding: 28px 40px 60px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.header-title span {
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.header-title h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    color: var(--text);
+
+    margin-top: 4px;
+
+}
+
+
+.header-decoration {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 17px;
+
+    background: var(--pink-light);
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--pink);
+
+}
+
+
+.mobile-menu {
+
+    display: none;
+
+    border: none;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+
+    display: none;
+
+    animation: pageIn .35s ease;
+
+}
+
+
+.page.active {
+
+    display: block;
+
+}
+
+
+@keyframes pageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero-card {
+
+    min-height: 380px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #f8e8eb,
+            #f6dfe3
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 50px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-content {
+
+    max-width: 610px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.hero-label {
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.hero-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 49px;
+
+    line-height: 1.1;
+
+    margin: 18px 0;
+
+    color: #3d3032;
+
+}
+
+
+.hero-content p {
+
+    color: #76666a;
+
+    max-width: 560px;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================================================
+   TOMBOL UTAMA
+===================================================== */
+
+.primary-button {
+
+    border: none;
+
+    background: var(--pink);
+
+    color: white;
+
+    border-radius: 14px;
+
+    padding: 14px 21px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: .25s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background: var(--pink-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   HERO DECORATION
+===================================================== */
+
+.hero-decoration {
+
+    width: 350px;
+
+    height: 300px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =====================================================
+   INI BAGIAN YANG MEMPERBAIKI BULET PUTIH
+===================================================== */
+
+.hero-circle {
+
+    width: 178px;
+
+    height: 178px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .85);
+
+    display: grid;
+
+    place-items: center;
+
+    box-shadow:
+        0 20px 45px rgba(184, 111, 124, .12);
+
+    animation: floatingCosmetic 4s ease-in-out infinite;
+
+}
+
+
+.cosmetic-icon {
+
+    width: 135px;
+
+    height: 135px;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(184, 111, 124, .18)
+        );
+
+}
+
+
+@keyframes floatingCosmetic {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =====================================================
+   TAG HERO
+===================================================== */
+
+.hero-tag {
+
+    position: absolute;
+
+    background: white;
+
+    color: var(--pink);
+
+    padding: 9px 17px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(184,111,124,.08);
+
+}
+
+
+.tag-one {
+
+    top: 15px;
+
+    right: 35px;
+
+}
+
+
+.tag-two {
+
+    bottom: 55px;
+
+    left: 20px;
+
+}
+
+
+.tag-three {
+
+    bottom: 20px;
+
+    right: 10px;
+
+}
+
+
+/* =====================================================
+   TANGGAL
+===================================================== */
+
+.current-date {
+
+    margin: 20px 2px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+/* =====================================================
+   STATISTIK
+===================================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.stat-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.stat-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 25px;
+
+    color: var(--text);
+
+}
+
+
+.stat-card.warning .stat-icon {
+
+    background: #fff0d7;
+
+    color: #d99527;
+
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    margin: 45px 0 20px;
+
+}
+
+
+.section-heading span,
+.page-heading > div > span {
+
+    color: var(--pink);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.section-heading h2,
+.page-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    margin-top: 7px;
+
+}
+
+
+/* =====================================================
+   FITUR
+===================================================== */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.feature-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 27px;
+
+}
+
+
+.feature-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 15px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.feature-card h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.feature-card p {
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 28px;
+
+}
+
+
+.page-heading p {
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   TOOLBAR PRODUK
+===================================================== */
+
+.product-toolbar {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.search-box {
+
+    flex: 1;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.search-box i {
+
+    color: var(--pink);
+
+}
+
+
+.search-box input {
+
+    border: none;
+
+    outline: none;
+
+    width: 100%;
+
+    padding: 14px 0;
+
+    color: var(--text);
+
+}
+
+
+.product-toolbar select {
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
+    color: var(--text);
+
+    outline: none;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+
+}
+
+
+th {
+
+    background: #fff5f6;
+
+    color: var(--pink-dark);
+
+    font-size: 12px;
+
+    text-align: left;
+
+    padding: 16px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+}
+
+
+td {
+
+    padding: 17px 16px;
+
+    border-top: 1px solid #f4e8ea;
+
+    font-size: 13px;
+
+    color: var(--text);
+
+}
+
+
+.product-name {
+
+    font-weight: 700;
+
+}
+
+
+.category-badge {
+
+    display: inline-block;
+
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+}
+
+
+.stock-good {
+
+    color: #508267;
+
+    font-weight: 700;
+
+}
+
+
+.stock-low {
+
+    color: #d38b25;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   TOMBOL AKSI TABLE
+===================================================== */
+
+.table-actions {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.action-button {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.edit-button {
+
+    background: #fff0d8;
+
+    color: #c98a2d;
+
+}
+
+
+.delete-button {
+
+    background: #fde8ea;
+
+    color: var(--danger);
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 65px 20px;
+
+}
+
+
+.empty-state.hidden {
+
+    display: none;
+
+}
+
+
+.empty-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 20px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 25px;
+
+}
+
+
+.empty-state h3 {
+
+    font-size: 17px;
+
+}
+
+
+.empty-state p {
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    margin: 6px 0 18px;
+
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.secondary-button {
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text);
+
+    border-radius: 12px;
+
+    padding: 12px 17px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+
+.secondary-button:hover {
+
+    border-color: var(--pink);
+
+    color: var(--pink);
+
+}
+
+
+/* =====================================================
+   MEMBER
+===================================================== */
+
+.member-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.member-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    transition: .25s ease;
+
+}
+
+
+.member-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(184,111,124,.08);
+
+}
+
+
+.member-card.leader {
+
+    border-color: #d89aa5;
+
+}
+
+
+.member-avatar {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 700;
+
+}
+
+
+.member-number {
+
+    color: var(--pink);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.member-card h3 {
+
+    font-size: 14px;
+
+    margin-top: 3px;
+
+}
+
+
+.member-card p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+.about-logo {
+
+    width: 160px;
+
+    height: 160px;
+
+    flex-shrink: 0;
+
+}
+
+
+.about-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.about-content {
+
+    max-width: 700px;
+
+}
+
+
+.about-label {
+
+    color: var(--pink);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.about-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    margin: 10px 0 15px;
+
+}
+
+
+.about-content p {
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+
+}
+
+
+.about-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+}
+
+
+.about-tags span {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   KONTAK
+===================================================== */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.contact-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+.contact-link {
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.contact-link:hover {
+
+    border-color: #d99aa5;
+
+    transform: translateY(-3px);
+
+}
+
+
+.contact-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    flex-shrink: 0;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    border-radius: 15px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 20px;
+
+}
+
+
+.contact-card span {
+
+    color: var(--pink);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.contact-card h3 {
+
+    font-size: 15px;
+
+    margin-top: 4px;
+
+}
+
+
+.contact-card p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+.contact-card p i {
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   PENGATURAN
+===================================================== */
+
+.settings-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.setting-row {
+
+    padding: 23px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.setting-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.setting-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 14px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.setting-info h3 {
+
+    font-size: 14px;
+
+}
+
+
+.setting-info p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   SWITCH
+===================================================== */
+
+.switch {
+
+    position: relative;
+
+    width: 48px;
+
+    height: 26px;
+
+}
+
+
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+
+}
+
+
+.slider {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #ddd;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: .25s;
+
+}
+
+
+.switch input:checked + .slider {
+
+    background: var(--pink);
+
+}
+
+
+.switch input:checked + .slider::before {
+
+    transform: translateX(22px);
+
+}
+
+
+/* =====================================================
+   DANGER
+===================================================== */
+
+.danger-setting {
+
+    padding: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.danger-setting h3 {
+
+    font-size: 14px;
+
+}
+
+
+.danger-setting p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+.danger-button {
+
+    border: none;
+
+    background: #fde8ea;
+
+    color: var(--danger);
+
+    padding: 12px 17px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    background: rgba(61, 48, 50, .35);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+.modal.show {
+
+    display: flex;
+
+}
+
+
+.modal-box {
+
+    width: 100%;
+
+    max-width: 550px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 25px 80px rgba(61,48,50,.18);
+
+    animation: modalIn .25s ease;
+
+}
+
+
+@keyframes modalIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.96) translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1) translateY(0);
+
+    }
+
+}
+
+
+.modal-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+
+}
+
+
+.modal-header span {
+
+    color: var(--pink);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+}
+
+
+.modal-header h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    margin-top: 4px;
+
+}
+
+
+.close-modal {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group {
+
+    margin-bottom: 16px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: #fffafa;
+
+    border-radius: 12px;
+
+    padding: 13px;
+
+    outline: none;
+
+    color: var(--text);
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: var(--pink);
+
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =====================================================
+   SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay {
+
+    display: none;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+
+        width: 240px;
+
+    }
+
+    .main-content {
+
+        margin-left: 240px;
+
+        padding: 25px;
+
+    }
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .hero-content h2 {
+
+        font-size: 40px;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE HP
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        transform: translateX(-100%);
+
+        transition: .3s ease;
+
+        width: 280px;
+
+    }
+
+
+    .sidebar.open {
+
+        transform: translateX(0);
+
+    }
+
+
+    .sidebar-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0,0,0,.25);
+
+        z-index: 90;
+
+    }
+
+
+    .sidebar-overlay.show {
+
+        display: block;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+
+    .mobile-menu {
+
+        display: grid;
+
+        place-items: center;
+
+    }
+
+
+    .top-header {
+
+        gap: 12px;
+
+    }
+
+
+    .header-title {
+
+        flex: 1;
+
+    }
+
+
+    .header-title h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .header-decoration {
+
+        display: none;
+
+    }
+
+
+    .hero-card {
+
+        padding: 30px;
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 35px;
+
+    }
+
+
+    .hero-decoration {
+
+        width: 100%;
+
+        height: 230px;
+
+    }
+
+
+    .hero-circle {
+
+        width: 145px;
+
+        height: 145px;
+
+    }
+
+
+    .cosmetic-icon {
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    .member-grid,
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 28px;
+
+    }
+
+
+    .about-tags {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE HP KECIL
+===================================================== */
+
+@media (max-width: 520px) {
+
+    .main-content {
+
+        padding: 16px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .stat-card {
+
+        padding: 18px;
+
+    }
+
+
+    .product-toolbar {
+
+        flex-direction: column;
+
+    }
+
+
+    .product-toolbar select {
+
+        padding: 13px;
+
+    }
+
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .danger-setting {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .modal-box {
+
+        padding: 22px;
+
+    }
+
+}

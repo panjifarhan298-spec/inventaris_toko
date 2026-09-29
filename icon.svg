@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- =====================================================
+     ICON APLIKASI GLOWÉ INVENTARIS
+====================================================== -->
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+>
+
+    <!-- background -->
+    <rect
+        width="512"
+        height="512"
+        rx="120"
+        fill="#f8e8eb"
+    />
+
+    <!-- lingkaran utama -->
+    <circle
+        cx="256"
+        cy="256"
+        r="178"
+        fill="#b86f7c"
+    />
+
+    <!-- tutup compact -->
+    <rect
+        x="135"
+        y="145"
+        width="242"
+        height="65"
+        rx="28"
+        fill="#f8dfe3"
+    />
+
+    <!-- garis compact -->
+    <rect
+        x="135"
+        y="195"
+        width="242"
+        height="15"
+        fill="#d994a0"
+    />
+
+    <!-- badan compact -->
+    <rect
+        x="145"
+        y="205"
+        width="222"
+        height="150"
+        rx="25"
+        fill="#fff5f6"
+    />
+
+    <!-- bedak -->
+    <circle
+        cx="256"
+        cy="278"
+        r="63"
+        fill="#f1cbd1"
+    />
+
+    <circle
+        cx="256"
+        cy="278"
+        r="48"
+        fill="#fffaf8"
+    />
+
+    <!-- huruf g -->
+    <text
+        x="256"
+        y="300"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="58"
+        font-weight="bold"
+        fill="#b86f7c"
+    >
+        g
+    </text>
+
+    <!-- sparkle kanan -->
+    <path
+        d="
+            M380 105
+            C386 127 396 137 418 143
+            C396 149 386 159 380 181
+            C374 159 364 149 342 143
+            C364 137 374 127 380 105Z
+        "
+        fill="#fff5f6"
+    />
+
+    <!-- sparkle kiri -->
+    <path
+        d="
+            M125 330
+            C129 345 136 352 151 356
+            C136 360 129 367 125 382
+            C121 367 114 360 99 356
+            C114 352 121 345 125 330Z
+        "
+        fill="#f8dfe3"
+    />
+
+</svg>

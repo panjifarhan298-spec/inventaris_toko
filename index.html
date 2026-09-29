@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- supaya website responsive di hp dan laptop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- judul aplikasi -->
+    <title>glowé | inventaris</title>
+
+    <!-- warna browser dan PWA -->
+    <meta name="theme-color" content="#b86f7c">
+
+    <!-- manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- icon aplikasi -->
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- font awesome untuk icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- css utama -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SPLASH SCREEN
+         tampil ketika aplikasi pertama kali dibuka
+    ====================================================== -->
+
+    <div id="splashScreen" class="splash-screen">
+
+        <div class="splash-content">
+
+            <!-- icon aplikasi -->
+            <div class="splash-icon">
+                <img src="icon.svg" alt="logo glowé">
+            </div>
+
+            <!-- nama aplikasi -->
+            <h1>glowé</h1>
+
+            <!-- tulisan inventaris -->
+            <p class="splash-inventaris">
+                inventaris
+            </p>
+
+            <p class="splash-text">
+                kelola data kosmetik dengan mudah
+            </p>
+
+            <!-- loading -->
+            <div class="loading-box">
+                <div class="loading-bar"></div>
+            </div>
+
+            <small>
+                memuat aplikasi...
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OVERLAY UNTUK MENU HP
+    ====================================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- logo aplikasi -->
+        <div class="brand">
+
+            <img
+                src="icon.svg"
+                alt="logo glowé"
+            >
+
+            <div class="brand-text">
+
+                <h2>glowé</h2>
+
+                <!-- WAJIB ADA: inventaris -->
+                <span>inventaris</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- navigasi -->
+        <nav class="sidebar-nav">
+
+            <!-- dashboard -->
+            <button
+                class="nav-item active"
+                data-page-target="dashboard"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>dashboard</span>
+            </button>
+
+
+            <!-- data produk -->
+            <button
+                class="nav-item"
+                data-page-target="produk"
+            >
+                <i class="fa-solid fa-box"></i>
+                <span>data produk</span>
+            </button>
+
+
+            <!-- anggota -->
+            <button
+                class="nav-item"
+                data-page-target="anggota"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>anggota kelompok 01</span>
+            </button>
+
+
+            <!-- tentang -->
+            <button
+                class="nav-item"
+                data-page-target="tentang"
+            >
+                <i class="fa-solid fa-circle-info"></i>
+                <span>tentang</span>
+            </button>
+
+
+            <!-- kontak -->
+            <button
+                class="nav-item"
+                data-page-target="kontak"
+            >
+                <i class="fa-solid fa-address-book"></i>
+                <span>kontak</span>
+            </button>
+
+
+            <!-- pengaturan -->
+            <button
+                class="nav-item"
+                data-page-target="pengaturan"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>pengaturan</span>
+            </button>
+
+        </nav>
+
+
+        <!-- bagian bawah sidebar -->
+        <div class="sidebar-footer">
+
+            <strong>glowé</strong>
+
+            <span>inventaris kosmetik</span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="buka menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="header-title">
+
+                <span id="headerSmallTitle">
+                    aplikasi inventaris
+                </span>
+
+                <h1 id="headerTitle">
+                    dashboard
+                </h1>
+
+            </div>
+
+
+            <!-- icon dekorasi -->
+            <div class="header-decoration">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             HALAMAN DASHBOARD
+        ================================================== -->
+
+        <section
+            class="page active"
+            id="dashboardPage"
+            data-page="dashboard"
+        >
+
+            <!-- hero -->
+            <div class="hero-card">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        GLOWÉ • INVENTARIS
+                    </span>
+
+                    <h2>
+                        rawat dirimu,<br>
+                        cintai dirimu.
+                    </h2>
+
+                    <p>
+                        kelola stok dan data produk kosmetik
+                        dengan lebih mudah, rapi, dan praktis.
+                    </p>
+
+                    <!-- tombol menuju produk -->
+                    <button
+                        class="primary-button"
+                        data-page-target="produk"
+                    >
+                        kelola produk
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     ICON HERO
+                     sudah diperbaiki agar tidak kosong
+                ================================================== -->
+
+                <div class="hero-decoration">
+
+                    <span class="hero-tag tag-one">
+                        beauty
+                    </span>
+
+                    <!-- lingkaran icon -->
+                    <div class="hero-circle">
+
+                        <!-- ilustrasi botol kosmetik -->
+                        <svg
+                            class="cosmetic-icon"
+                            viewBox="0 0 200 200"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-label="icon kosmetik"
+                        >
+
+                            <!-- tutup botol -->
+                            <rect
+                                x="78"
+                                y="30"
+                                width="44"
+                                height="25"
+                                rx="8"
+                                fill="#b86f7c"
+                            />
+
+                            <!-- leher botol -->
+                            <rect
+                                x="72"
+                                y="50"
+                                width="56"
+                                height="20"
+                                rx="8"
+                                fill="#d994a0"
+                            />
+
+                            <!-- badan botol -->
+                            <rect
+                                x="55"
+                                y="65"
+                                width="90"
+                                height="105"
+                                rx="24"
+                                fill="#b86f7c"
+                            />
+
+                            <!-- label -->
+                            <rect
+                                x="66"
+                                y="82"
+                                width="68"
+                                height="58"
+                                rx="14"
+                                fill="#fff5f6"
+                            />
+
+                            <!-- nama -->
+                            <text
+                                x="100"
+                                y="108"
+                                text-anchor="middle"
+                                font-family="Georgia, serif"
+                                font-size="15"
+                                font-weight="bold"
+                                fill="#b86f7c"
+                            >
+                                glowé
+                            </text>
+
+                            <!-- garis dekorasi -->
+                            <rect
+                                x="82"
+                                y="118"
+                                width="36"
+                                height="3"
+                                rx="2"
+                                fill="#d994a0"
+                            />
+
+                            <!-- sparkle -->
+                            <path
+                                d="M151 42
+                                   C154 55 160 61 173 64
+                                   C160 67 154 73 151 86
+                                   C148 73 142 67 129 64
+                                   C142 61 148 55 151 42Z"
+                                fill="#b86f7c"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <span class="hero-tag tag-two">
+                        care
+                    </span>
+
+                    <span class="hero-tag tag-three">
+                        confidence
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- tanggal -->
+            <div class="current-date">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <span id="currentDate">
+                    memuat tanggal...
+                </span>
+
+            </div>
+
+
+            <!-- statistik -->
+            <div class="stats-grid">
+
+                <!-- total produk -->
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <span>total produk</span>
+                        <strong id="statTotalProduk">0</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- kategori -->
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div>
+                        <span>kategori</span>
+                        <strong id="statTotalKategori">0</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- total stok -->
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+
+                    <div>
+                        <span>total stok</span>
+                        <strong id="statTotalStok">0</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- stok menipis -->
+                <div class="stat-card warning">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+                        <span>stok menipis</span>
+                        <strong id="statStokMenipis">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- fitur -->
+            <div class="section-heading">
+
+                <span>
+                    FITUR APLIKASI
+                </span>
+
+                <h2>
+                    semua lebih terorganisir
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                    <h3>
+                        inventaris barang
+                    </h3>
+
+                    <p>
+                        simpan dan kelola data produk
+                        kosmetik dengan rapi.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <h3>
+                        CRUD lengkap
+                    </h3>
+
+                    <p>
+                        tambah, lihat, ubah, dan hapus
+                        data produk dengan mudah.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <h3>
+                        PWA
+                    </h3>
+
+                    <p>
+                        aplikasi dapat digunakan
+                        seperti aplikasi di perangkat.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HALAMAN PRODUK
+        ================================================== -->
+
+        <section
+            class="page"
+            id="produkPage"
+            data-page="produk"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span>
+                        kelola inventaris
+                    </span>
+
+                    <h2>
+                        data produk
+                    </h2>
+
+                    <p>
+                        tambah dan kelola semua produk kosmetik.
+                    </p>
+
+                </div>
+
+
+                <!-- tombol tambah -->
+                <button
+                    class="primary-button"
+                    id="addProductButton"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    tambah produk
+                </button>
+
+            </div>
+
+
+            <!-- toolbar -->
+            <div class="product-toolbar">
+
+                <!-- search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchProduct"
+                        placeholder="cari nama, kode, atau kategori..."
+                    >
+
+                </div>
+
+
+                <!-- filter -->
+                <select id="filterKategori">
+
+                    <option value="semua">
+                        semua kategori
+                    </option>
+
+                    <option value="skincare">
+                        skincare
+                    </option>
+
+                    <option value="makeup">
+                        makeup
+                    </option>
+
+                    <option value="bodycare">
+                        bodycare
+                    </option>
+
+                    <option value="haircare">
+                        haircare
+                    </option>
+
+                    <option value="parfum">
+                        parfum
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- tabel -->
+            <div class="table-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>kode</th>
+                                <th>nama produk</th>
+                                <th>kategori</th>
+                                <th>harga</th>
+                                <th>stok</th>
+                                <th>aksi</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="productTable">
+
+                            <!-- data produk dari javascript -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- kondisi kosong -->
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <h3>
+                        belum ada produk
+                    </h3>
+
+                    <p>
+                        tambahkan produk pertama kamu.
+                    </p>
+
+                    <button
+                        class="secondary-button"
+                        id="emptyAddButton"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        tambah produk
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HALAMAN ANGGOTA
+        ================================================== -->
+
+        <section
+            class="page"
+            id="anggotaPage"
+            data-page="anggota"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span>
+                        kelompok 01
+                    </span>
+
+                    <h2>
+                        anggota kelompok
+                    </h2>
+
+                    <p>
+                        satu kelompok, satu tujuan, satu cerita.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="member-grid">
+
+                <!-- anggota 02 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        NS
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Nanda Siti Nur Rohmah
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 08 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        OW
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            08
+                        </span>
+
+                        <h3>
+                            Oky Wahyu Firmansyah
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 09 -->
+                <div class="member-card leader">
+
+                    <div class="member-avatar">
+                        PF
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            09 • ketua
+                        </span>
+
+                        <h3>
+                            Panji Farhan Indraswaya
+                        </h3>
+
+                        <p>
+                            ketua kelompok
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 20 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        RA
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            20
+                        </span>
+
+                        <h3>
+                            Revani Dwi Agustin
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 24 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        SA
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            24
+                        </span>
+
+                        <h3>
+                            Sekar Ayu Wulandari
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 27 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        SA
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            27
+                        </span>
+
+                        <h3>
+                            Silvia Adistiana
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 31 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        SH
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            31
+                        </span>
+
+                        <h3>
+                            Syifa Hafizah Azaria
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- anggota 38 -->
+                <div class="member-card">
+
+                    <div class="member-avatar">
+                        YD
+                    </div>
+
+                    <div>
+                        <span class="member-number">
+                            38
+                        </span>
+
+                        <h3>
+                            Yehezkiel David Christian Semedi
+                        </h3>
+
+                        <p>
+                            anggota
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HALAMAN TENTANG
+        ================================================== -->
+
+        <section
+            class="page"
+            id="tentangPage"
+            data-page="tentang"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span>
+                        tentang aplikasi
+                    </span>
+
+                    <h2>
+                        glowé inventaris
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-logo">
+
+                    <img
+                        src="icon.svg"
+                        alt="logo glowé"
+                    >
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <span class="about-label">
+                        glowé • inventaris
+                    </span>
+
+                    <h2>
+                        sistem inventaris kosmetik
+                    </h2>
+
+                    <p>
+                        glowé inventaris adalah aplikasi sederhana
+                        untuk membantu mengelola data dan stok
+                        produk kosmetik secara lebih rapi.
+                    </p>
+
+                    <p>
+                        aplikasi ini menggunakan localStorage
+                        sebagai penyimpanan data sehingga tidak
+                        membutuhkan Google Spreadsheet.
+                    </p>
+
+
+                    <div class="about-tags">
+
+                        <span>localStorage</span>
+                        <span>crud</span>
+                        <span>pwa</span>
+                        <span>responsive</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HALAMAN KONTAK
+        ================================================== -->
+
+        <section
+            class="page"
+            id="kontakPage"
+            data-page="kontak"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span>
+                        hubungi kami
+                    </span>
+
+                    <h2>
+                        kontak
+                    </h2>
+
+                    <p>
+                        informasi kelompok dan media sosial.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <!-- alamat -->
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            alamat
+                        </span>
+
+                        <h3>
+                            smk krian 1 sidoarjo
+                        </h3>
+
+                        <p>
+                            xii rpl 4, kelompok 1
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- instagram -->
+                <a
+                    href="https://www.instagram.com/glowe.cosmetic/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card contact-link"
+                >
+
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            instagram
+                        </span>
+
+                        <h3>
+                            @glowe.cosmetic
+                        </h3>
+
+                        <p>
+                            buka instagram
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- tiktok -->
+                <a
+                    href="https://www.tiktok.com/@glowe.cosmetic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card contact-link"
+                >
+
+                    <div class="contact-icon">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            tiktok
+                        </span>
+
+                        <h3>
+                            @glowe.cosmetic
+                        </h3>
+
+                        <p>
+                            buka tiktok
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- whatsapp -->
+                <a
+                    href="https://wa.me/6281234567890"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card contact-link"
+                >
+
+                    <div class="contact-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            whatsapp
+                        </span>
+
+                        <h3>
+                            kontak kelompok
+                        </h3>
+
+                        <p>
+                            chat whatsapp
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HALAMAN PENGATURAN
+        ================================================== -->
+
+        <section
+            class="page"
+            id="pengaturanPage"
+            data-page="pengaturan"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span>
+                        pengaturan aplikasi
+                    </span>
+
+                    <h2>
+                        pengaturan
+                    </h2>
+
+                    <p>
+                        kelola penyimpanan dan data aplikasi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-card">
+
+                <!-- localStorage -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <div class="setting-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                localStorage
+                            </h3>
+
+                            <p>
+                                data produk disimpan di browser.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="storageToggle"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- PWA -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <div class="setting-icon">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                PWA
+                            </h3>
+
+                            <p>
+                                manifest dan service worker aktif.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="pwaToggle"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- hapus data -->
+                <div class="danger-setting">
+
+                    <div>
+
+                        <h3>
+                            hapus semua data
+                        </h3>
+
+                        <p>
+                            semua data produk dari localStorage
+                            akan dihapus.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="danger-button"
+                        id="deleteAllButton"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                        hapus semua
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL TAMBAH / EDIT PRODUK
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="productModal"
+    >
+
+        <div class="modal-box">
+
+            <!-- header modal -->
+            <div class="modal-header">
+
+                <div>
+
+                    <span>
+                        inventaris
+                    </span>
+
+                    <h2 id="modalTitle">
+                        tambah produk
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-modal"
+                    id="closeModal"
+                    type="button"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- form -->
+            <form id="productForm">
+
+                <!-- kode -->
+                <div class="form-group">
+
+                    <label for="kodeProduk">
+                        kode produk
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kodeProduk"
+                        placeholder="contoh: GLW001"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- nama -->
+                <div class="form-group">
+
+                    <label for="namaProduk">
+                        nama produk
+                    </label>
+
+                    <input
+                        type="text"
+                        id="namaProduk"
+                        placeholder="contoh: serum wajah"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- kategori -->
+                <div class="form-group">
+
+                    <label for="kategoriProduk">
+                        kategori
+                    </label>
+
+                    <select
+                        id="kategoriProduk"
+                        required
+                    >
+
+                        <option value="">
+                            pilih kategori
+                        </option>
+
+                        <option value="skincare">
+                            skincare
+                        </option>
+
+                        <option value="makeup">
+                            makeup
+                        </option>
+
+                        <option value="bodycare">
+                            bodycare
+                        </option>
+
+                        <option value="haircare">
+                            haircare
+                        </option>
+
+                        <option value="parfum">
+                            parfum
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- harga -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="hargaProduk">
+                            harga
+                        </label>
+
+                        <input
+                            type="number"
+                            id="hargaProduk"
+                            placeholder="50000"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- stok -->
+                    <div class="form-group">
+
+                        <label for="stokProduk">
+                            stok
+                        </label>
+
+                        <input
+                            type="number"
+                            id="stokProduk"
+                            placeholder="10"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- tombol -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="cancelModal"
+                    >
+                        batal
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        simpan produk
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- javascript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
